@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:control="clr-namespace:FluentUI.Controls"
+                    xmlns:fluent="clr-namespace:FluentUI">
+
+    <Style TargetType="fluent:FluentDialog">        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="fluent:FluentDialog">
+                    <DockPanel>
+                        <control:MessageDialog x:Name="PART_messageDialog"/>
+                        <control:ProgressDialog x:Name="PART_progressDialog"/>
+                        <control:ProgressDialog x:Name="PART_customDialog"/>                       
+                    </DockPanel>                                             
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="control:MessageDialog">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="control:MessageDialog">
+                    <Grid UseLayoutRounding="True">
+                        <Border VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Margin="10" 
+                                CornerRadius="3"
+                                Background="{StaticResource Neutral.White}" 
+                                BorderThickness=".2"    
+                                MinHeight="200"
+                                MinWidth="350"                                
+                                Padding="2"
+                                BorderBrush="Gray"
+                                Effect="{StaticResource Depth8}">
+                            <DockPanel>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="PART_Header"
+                                               Cursor="SizeAll"
+                                               Grid.Row="0" 
+                                               Margin="20 10 0 5"
+                                               FontSize="23"
+                                               FontWeight="SemiBold"
+                                               Text="{TemplateBinding Title}"/>
+                                    <TextBlock Grid.Row="1"    
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"                                           
+                                               Text="{TemplateBinding Message}"/>
+                                    <StackPanel Orientation="Horizontal"
+                                                VerticalAlignment="Bottom"
+                                                HorizontalAlignment="Right"                                           
+                                                Grid.Row="2"
+                                                Margin="0 0 10 10">
+                                        <Button x:Name="PART_OKButton"
+                                                Content="OK"
+                                                Width="100"
+                                                Margin="5"                                                                                        
+                                                Style="{StaticResource FluentPrimaryButtonStyle}"/>
+                                        <Button x:Name="PART_CancelButton"
+                                                Content="Cancelar"
+                                                Width="100"
+                                                Margin="3 0 8 0"/>
+                                        <Button x:Name="PART_DeleteButton" 
+                                                Content="Excluír"
+                                                Width="100"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="control:ProgressDialog">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="control:ProgressDialog">
+                    <Grid UseLayoutRounding="True">
+                        <Border VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Margin="10" 
+                                CornerRadius="3"
+                                Background="{StaticResource Neutral.White}" 
+                                BorderThickness=".2"    
+                                MinHeight="200"
+                                MinWidth="350"                                
+                                Padding="2"
+                                BorderBrush="Gray"
+                                Effect="{StaticResource Depth8}">
+                            <DockPanel>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0"
+                                               SnapsToDevicePixels="True"
+                                               Margin="20 10 0 5"
+                                               FontSize="23"
+                                               FontWeight="SemiBold"
+                                               Text="{TemplateBinding Title}"/>                                    
+                                    <StackPanel Orientation="Vertical"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"                                           
+                                                Grid.Row="2"
+                                                Margin="0 0 0 10">
+                                        <fluent:FluentSpinner SpinnerSize="Normal"
+                                                              SpinnerPosition="Left"
+                                                              Label="{TemplateBinding Message}"
+                                                              SnapsToDevicePixels="True"
+                                                              Margin="0 0 0 20"/>                                        
+                                        <Button x:Name="PART_CancelButton"
+                                                SnapsToDevicePixels="True"
+                                                Content="Cancelar"
+                                                Width="100"
+                                                Margin="0 10 0 0"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="control:CustomDialog">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="control:CustomDialog">
+                    <Grid UseLayoutRounding="True">
+                        <Border VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="10" 
+                                    CornerRadius="3"
+                                    Background="{StaticResource Neutral.White}" 
+                                    BorderThickness=".2"    
+                                    MinHeight="200"
+                                    MinWidth="350"                                
+                                    Padding="2"
+                                    BorderBrush="Gray"
+                                    Effect="{StaticResource Depth8}">
+                            <ContentControl Content="{TemplateBinding CustomContent}"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,103 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FluentUI.Styles"
+                    xmlns:fluent="clr-namespace:FluentUI">
+
+    <Style TargetType="{x:Type fluent:FluentSpinner}">        
+        <Setter Property="Template">            
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type fluent:FluentSpinner}">
+                    <DockPanel>                        
+                        <Grid DockPanel.Dock="{TemplateBinding SpinnerPosition}">
+                            <Ellipse x:Name="ellipse"
+                                     Stretch="Fill" 
+                                     Stroke="{StaticResource Communication.CommunicationTint20}" 
+                                     StrokeThickness="3.5">
+                            </Ellipse>
+                            <Ellipse x:Name="spinner"                                                         
+                                     Stretch="Fill" 
+                                     Stroke="{StaticResource Communication.CommunicationPrimary}" 
+                                     StrokeThickness="4.5"
+                                     RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.Clip>
+                                    <RectangleGeometry Rect="{Binding SpinnerGeometry, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                                </Ellipse.Clip>
+                                <Ellipse.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform />
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                        </Grid>
+                        <TextBlock Text="{TemplateBinding Label}"
+                                   Margin="5"                
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </DockPanel>                    
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="Large">
+                            <Setter Property="Height" Value="50" TargetName="ellipse"/>
+                            <Setter Property="Width" Value="50" TargetName="ellipse"/>
+                            <Setter Property="Shape.StrokeThickness" Value="3.5" TargetName="ellipse"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="Normal">
+                            <Setter Property="Height" Value="40" TargetName="ellipse"/>
+                            <Setter Property="Width" Value="40" TargetName="ellipse"/>
+                            <Setter Property="Shape.StrokeThickness" Value="3.5" TargetName="ellipse"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="Small">
+                            <Setter Property="Height" Value="25" TargetName="ellipse"/>
+                            <Setter Property="Width" Value="25" TargetName="ellipse"/>
+                            <Setter Property="Shape.StrokeThickness" Value="2.5" TargetName="ellipse"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="ExtraSmall">
+                            <Setter Property="Height" Value="15" TargetName="ellipse"/>
+                            <Setter Property="Width" Value="15" TargetName="ellipse"/>
+                            <Setter Property="Shape.StrokeThickness" Value="2" TargetName="ellipse"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="Large">
+                            <Setter Property="Height" Value="50" TargetName="spinner"/>
+                            <Setter Property="Width" Value="50" TargetName="spinner"/>
+                            <Setter Property="Shape.StrokeThickness" Value="4.5" TargetName="spinner"/>
+                            <Setter Property="SpinnerGeometry" Value="0, 25, 25, 25"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="Normal">
+                            <Setter Property="Height" Value="40" TargetName="spinner"/>
+                            <Setter Property="Width" Value="40" TargetName="spinner"/>
+                            <Setter Property="Shape.StrokeThickness" Value="4.5" TargetName="spinner"/>
+                            <Setter Property="SpinnerGeometry" Value="0, 20, 20, 20"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="Small">
+                            <Setter Property="Height" Value="25" TargetName="spinner"/>
+                            <Setter Property="Width" Value="25" TargetName="spinner"/>
+                            <Setter Property="Shape.StrokeThickness" Value="3" TargetName="spinner"/>
+                            <Setter Property="SpinnerGeometry" Value="0, 12.5, 12.5, 12.5"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpinnerSize, RelativeSource={RelativeSource Self}}" Value="ExtraSmall">
+                            <Setter Property="Height" Value="15" TargetName="spinner"/>
+                            <Setter Property="Width" Value="15" TargetName="spinner"/>
+                            <Setter Property="Shape.StrokeThickness" Value="2.3" TargetName="spinner"/>
+                            <Setter Property="SpinnerGeometry" Value="0, 7.5 ,7.5 ,7.5"/>
+                        </DataTrigger>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames RepeatBehavior="Forever" 
+                                                                   Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" 
+                                                                   Storyboard.TargetName="spinner">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                        <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="360"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>                    
+                </ControlTemplate>                
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

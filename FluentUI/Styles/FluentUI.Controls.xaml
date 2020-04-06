@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <Style TargetType="Button" BasedOn="{StaticResource FluentButtonStyle}"/>
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource FluentToggleButtonStyle}"/>
+    <Style TargetType="Menu" BasedOn="{StaticResource FluentMenuStyle}"/>
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource FluentContextMenuStyle}"/>
+    <Style TargetType="MenuItem" BasedOn="{StaticResource FluentMenuItemStyle}"/>
+    <Style TargetType="Separator" BasedOn="{StaticResource FluentSeparatorStyle}"/>
+    <Style TargetType="TabControl" BasedOn="{StaticResource FluentTabControlStyle}"/>
+    <Style TargetType="TabItem" BasedOn="{StaticResource FluentTabItemStyle}"/>
+    <Style TargetType="TextBox" BasedOn="{StaticResource FluentTextBoxStyle}"/>
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource FluentPasswordBoxStyle}"/>
+    <Style TargetType="ToolBar" BasedOn="{StaticResource FluentToolBarStyle}"/>
+    <Style TargetType="ToolBarTray" BasedOn="{StaticResource FluentToolBarTrayStyle}"/>
+    <Style TargetType="TreeView" BasedOn="{StaticResource FluentTreeViewStyle}"/>
+    <Style TargetType="TreeViewItem" BasedOn="{StaticResource FluentTreeViewItemStyle}"/>
+    <Style TargetType="ListView" BasedOn="{StaticResource FluentListViewStyle}"/>
+    <!--<Style TargetType="ListViewItem" BasedOn="{StaticResource FluentListViewItemStyle}"/>-->
+    <Style TargetType="ComboBox" BasedOn="{StaticResource FluentComboBoxStyle}"/>
+    <Style TargetType="CheckBox" BasedOn="{StaticResource FluentCheckBoxStyle}"/>
+    <Style TargetType="GridSplitter" BasedOn="{StaticResource FluentGridSplitter}"/>
+    <Style TargetType="DataGrid" BasedOn="{StaticResource FluentDataGridStyle}"/>
+    <Style TargetType="ListBox" BasedOn="{StaticResource FluentListBoxStyle}"/>
+    <!--<Style TargetType="ListBoxItem" BasedOn="{StaticResource FluentListBoxItemStyle}"/>-->
+
+</ResourceDictionary>
