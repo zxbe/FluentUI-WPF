@@ -70,8 +70,7 @@ namespace FluentUI.Controls
 
         protected override void OnPreviewMouseMove(MouseEventArgs e)
         {
-            if (!isMoving) return;
-            if (!isMouseOverHeader) return;
+            if (!isMoving) return;      
 
             var mousePoint = Mouse.GetPosition(Application.Current.MainWindow);
 
@@ -101,12 +100,12 @@ namespace FluentUI.Controls
 
         private void Header_MouseEnter(object sender, MouseEventArgs e)
         {
-            isMouseOverHeader = true;
+         //   isMouseOverHeader = true;
         }
 
         private void Header_MouseLeave(object sender, MouseEventArgs e)
-        {
-            isMouseOverHeader = false;
+        {           
+           // isMouseOverHeader = false;
         }
 
         private void SetButtonContent()
