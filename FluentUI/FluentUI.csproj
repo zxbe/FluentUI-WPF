@@ -12,6 +12,7 @@
     <ApplicationIcon>fluentui_icon.ico</ApplicationIcon>
     <PackageIcon>FluentUI.png</PackageIcon>
     <Description>WPF theme library based on Microsoft FluentUI</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
