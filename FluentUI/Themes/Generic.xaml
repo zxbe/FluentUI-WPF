@@ -14,7 +14,6 @@
                               UseAeroCaptionButtons="False"/>
             </Setter.Value>
         </Setter>
-        <Setter Property="FontSize" Value="15.333"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type fluent:FluentWindow}">

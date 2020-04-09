@@ -9,6 +9,9 @@
     <Authors>jr_tussi</Authors>
     <Company>Progmasys</Company>
     <Product>FluentUI</Product>
+    <ApplicationIcon>fluentui_icon.ico</ApplicationIcon>
+    <PackageIcon>FluentUI.png</PackageIcon>
+    <Description>WPF theme library based on Microsoft FluentUI</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,6 +34,13 @@
     <Resource Include="Fonts\15\fabric-icons-15-3807251b.TTF" />
     <Resource Include="Fonts\16\fabric-icons-16-9cf93f3b.TTF" />
     <Resource Include="Fonts\17\fabric-icons-17-0c4ed701.TTF" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\Desktop\Progmasys PowerDados\FluentUI.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

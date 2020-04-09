@@ -112,7 +112,7 @@
                                                 HorizontalAlignment="Center"                                           
                                                 Grid.Row="2"
                                                 Margin="0 0 0 10">
-                                        <fluent:FluentSpinner SpinnerSize="Normal"
+                                        <fluent:FluentSpinner SpinnerSize="Small"
                                                               SpinnerPosition="Left"
                                                               Label="{TemplateBinding Message}"
                                                               SnapsToDevicePixels="True"
